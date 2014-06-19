@@ -22,7 +22,8 @@ int main()
     memset(&servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(MYPORT);  ///服务器端口
-    servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");  ///服务器ip
+    // servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");  ///服务器ip
+    servaddr.sin_addr.s_addr = inet_addr("192.168.2.2");
 
     ///连接服务器，成功返回0，错误返回-1
     if (connect(client_sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0)
